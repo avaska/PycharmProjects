@@ -58,3 +58,27 @@ for i in range(2,10):
 
 print(123)
 print('hi') #print : 자동 개행 기능
+
+
+
+#for 반복문과 딕셔너리 함께 사용하기
+
+#for key를 저장할 변수 in 딕셔너리 :
+#   코드
+
+
+print('-------------------------------------------')
+#예제
+#딕셔너리를 선언합니다
+# dictionary = {키:값, 키:값, 키:값 }
+dictionary = {  "name":"7D 건조 망고",
+                "type": "당절임",
+                "ingredient":["망고","설탕","메타중아황산나트륨","치자황색소"],
+                "origin":"필리핀"
+             }
+for key in dictionary:
+    print(key, ":", dictionary[key])
+
+print('--------------------------')
+index = 2
+print("ingredient",'[', index, '] : ',  dictionary["ingredient"][index])
