@@ -37,7 +37,34 @@ soup = BeautifulSoup(target, "html.parser")
 #    새로운 배열에 모두 담아 배열을 반환 해주는 함수 이다.
 
 #모든? <ctiy>..</city> 태그들을 선택하여 새로운 배열(리스트)에 담아 리스트를 반환해줌
-cityTagsList = soup.select("city")
-print(cityTagsList)
+# cityTagsList = soup.select("city")
+# print(cityTagsList)
+
+# select("location") 메소드는 읽어 들인 전체 HTML내용중....
+# <location>....</location>태그 한쌍씩  모두 찾아서 ... 새로운 리스트에 각각 저장 후
+# 리스트 자체를 반환 해 준다.
+for location in soup.select("location"):
+    #<location>...</location>태그 내부의  <city></city> , <wf></wf>, <tmn></tmn> , <tmx></tmx>태그들을
+    #각각 선택해서  텍스트 노드 값만? 얻어서 출력
+    print("도시 : ", location.select_one("city").text)
+    print("날씨 : ", location.select_one("wf").string)
+    print("최저기온 : ", location.select_one("tmn").string)
+    print("최고기온 : ", location.select_one("tmx").string)
+    print()
+
+#select_one() 메소드
+# 만족하는 첫번째 경우의 태그요소만 찾아서 반환 시킨다.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
